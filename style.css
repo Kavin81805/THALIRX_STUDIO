@@ -481,10 +481,14 @@ section {
 }
 
 .about-text p {
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+  margin-bottom: 18px;
+  line-height: 1.7;
+  color: #cfcfcf;
+}
+
+.about-text p:first-child {
+  font-size: 1.1rem;
+  color: #ffffff;
 }
 
 .highlight-glow, .highlight {
