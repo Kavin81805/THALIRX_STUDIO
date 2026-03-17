@@ -1,0 +1,1 @@
+# THALIRX_STUDIO

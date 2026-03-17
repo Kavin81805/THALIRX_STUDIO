@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 | Atmospheric Exploration Game | Thalirx Studio</title>
+    <meta name="description" content="Discover Project 1 (Loop no 099), an immersive atmospheric single-player exploration and puzzle adventure by Thalirx Studio.">
+    <meta name="keywords" content="Project 1, Loop no 099, Thalirx Studio, indie game, atmospheric exploration, puzzle game, mysterious underground">
+    <link rel="canonical" href="https://thalirx.com/project1.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thalirx.com/project1.html">
+    <meta property="og:title" content="Project 1 | Atmospheric Exploration Game | Thalirx Studio">
+    <meta property="og:description" content="Loop no 099. Dive into a mysterious underground world where every discovery raises new questions.">
+    <meta property="og:image" content="https://thalirx.com/assets/project1/firstlook .jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thalirx.com/project1.html">
+    <meta property="twitter:title" content="Project 1 | Atmospheric Exploration Game | Thalirx Studio">
+    <meta property="twitter:description" content="Loop no 099. Dive into a mysterious underground world where every discovery raises new questions.">
+    <meta property="twitter:image" content="https://thalirx.com/assets/project1/firstlook .jpg">
+
+    <!-- Structured Data (SoftwareApplication/Game) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Project 1 (Loop no 099)",
+      "applicationCategory": "Game",
+      "operatingSystem": "Windows, Console",
+      "description": "An atmospheric single-player exploration and puzzle adventure set in a mysterious underground environment.",
+      "author": {
+        "@type": "Organization",
+        "name": "Thalirx Studio"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="project-detail-page">
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+    <div class="scroll-progress-bar"></div>
+    <button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="Thalirx Studio Logo" class="nav-logo" loading="lazy" decoding="async"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;" class="logo-text">THALIRX</span>
+            </a>
+        </div>
+        <div class="nav-toggle" id="navToggle" role="button" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <ul class="nav-links">
+        <li><a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="#about-game"><i class="fa-solid fa-circle-info"></i><span>About</span></a></li>
+        <li><a href="#status"><i class="fa-solid fa-bars-progress"></i><span>Status</span></a></li>
+        <li><a href="#first-look"><i class="fa-solid fa-eye"></i><span>First Look</span></a></li>
+        <li><a href="#gallery"><i class="fa-solid fa-images"></i><span>Gallery</span></a></li>
+        <li><a href="index.html#community"><i class="fa-solid fa-people-group"></i><span>Community</span></a></li>
+    </ul>
+
+    <header class="project-header">
+        <div class="container header-container">
+            <div class="hero-title-wrapper">
+                <h1 class="hero-title project-title" data-text="PROJECT 1">PROJECT 1</h1>
+            </div>
+            <p class="project-tagline">Loop no 099</p>
+        </div>
+    </header>
+
+    <section class="project-intro">
+        <div class="container">
+            <div class="project-intro-grid">
+                <div class="project-info-card glass-panel" id="about-game" data-tilt>
+                    <h2>ABOUT THIS GAME</h2>
+                    <div class="story-content">
+                        <p class="story-text">Project 1 is an <span class="highlight-glow">atmospheric single-player
+                                exploration</span> and <span class="highlight-glow">puzzle adventure</span>
+                            set in a <span class="highlight-glow">mysterious underground environment</span>. Players
+                            must explore <span class="highlight-glow">forgotten spaces</span>, solve
+                            <span class="highlight-glow">environmental puzzles</span>, and carefully navigate through
+                            the unknown while avoiding hidden
+                            dangers.
+                        </p>
+                        <br>
+                        <p class="story-text">The experience focuses on <span class="highlight-glow">tension, discovery,
+                                and environmental
+                                storytelling</span>, where the world itself reveals fragments of a <span
+                                class="highlight-glow">deeper mystery</span>. As players
+                            progress, they begin to uncover traces of a <span class="highlight-glow">lost past</span>
+                            buried beneath the surface.</p>
+                        <br>
+                        <p class="story-text">Every discovery raises new questions — and not everything hidden
+                            underground was meant to be found.</p>
+                        <br>
+                        <p class="story-quote highlight-glow">“Some places should remain buried”</p>
+                    </div>
+                    <div class="dev-status" id="status">
+                        <span class="status-label">DEVELOPMENT STATUS</span>
+                        <div class="employee-counter-wrapper">
+                            <div class="counter-container" id="employeeCounter" data-target="10"></div>
+                            <span class="stat-label">PEOPLE WORKING ON THIS PROJECT</span>
+                        </div>
+                    </div>
+                    <div class="social-updates">
+                        <p>For more updates follow on social media</p>
+                        <div class="social-links">
+                            <a href="https://discord.gg/AvM7FXssgN" target="_blank" aria-label="Join our Discord community"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.instagram.com/thalirx_studio?igsh=MWVpcnJwZ3Nvdnl0ZQ=="
+                                target="_blank" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@thalirx_studio?si=Ac5JHFkjdhfQUKjt" target="_blank" aria-label="Subscribe to our YouTube channel"><i
+                                    class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-image-container spotlight" id="first-look" data-tilt>
+                    <img src="assets/project1/firstlook .jpg" alt="Project 1 First Look" class="featured-image"
+                        id="firstLookImg">
+                    <div class="spotlight-overlay"></div>
+                    <span class="image-badge">FIRST LOOK</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="galleryModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <span class="modal-nav prev">&lt;</span>
+        <span class="modal-nav next">&gt;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="modalCaption"></div>
+    </div>
+
+    <section class="project-gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">PROJECT GALLERY</h2>
+            <div class="gallery-grid" id="dynamicGallery">
+                <!-- Fallback static images / Gallery items -->
+                <div class="gallery-item glass-panel" data-tilt>
+                    <img src="assets/project1/1.jpeg" alt="Project 1 Screenshot 1">
+                </div>
+                <div class="gallery-item glass-panel" data-tilt>
+                    <img src="assets/project1/2.jpeg" alt="Project 1 Screenshot 2">
+                </div>
+                <div class="gallery-item glass-panel" data-tilt>
+                    <img src="assets/project1/3.jpeg" alt="Project 1 Screenshot 3">
+                </div>
+                <div class="gallery-item glass-panel" data-tilt>
+                    <img src="assets/project1/4.jpeg" alt="Project 1 Screenshot 4">
+                </div>
+                <div class="gallery-item glass-panel" data-tilt>
+                    <img src="assets/project1/5.jpeg" alt="Project 1 Screenshot 5">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2 class="footer-logo">THALIRX</h2>
+            <p>Ready to play? Join the movement.</p>
+            <div class="footer-grid">
+                <div class="contact-section">
+                    <h3>CONNECT WITH US</h3>
+                    <div class="contact-info">
+                        <a href="mailto:thalirxmail@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> thalirxmail@gmail.com
+                        </a>
+                        <a href="tel:6382494746" class="contact-link">
+                            <i class="fas fa-phone"></i> +91 6382494746
+                        </a>
+                        <a href="tel:6369805185" class="contact-link">
+                            <i class="fas fa-phone"></i> +91 6369805185
+                        </a>
+                    </div>
+                </div>
+                <div class="social-section">
+                    <h3>FOLLOW THE LEGACY</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/AvM7FXssgN" target="_blank" aria-label="Join our Discord community">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.instagram.com/thalirx_studio?igsh=MWVpcnJwZ3Nvdnl0ZQ==" target="_blank"
+                            aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/thalirx-studio/" target="_blank"
+                            aria-label="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com/@thalirx_studio?si=Ac5JHFkjdhfQUKjt" target="_blank"
+                            aria-label="Subscribe to our YouTube channel">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Thalirx Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
