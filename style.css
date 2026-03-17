@@ -1725,3 +1725,78 @@ body.loaded { opacity: 1; }
         right: 20px !important;
     }
 }
+
+/* Project Enhancements */
+.project-features, .gameplay-loop {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    border-color: #00ffd5;
+    box-shadow: 0 0 30px rgba(0, 255, 213, 0.1);
+}
+
+.feature-item h3 {
+    color: #00ffd5;
+    margin-bottom: 1rem;
+    font-family: 'Syncopate', sans-serif;
+    font-size: 1.1rem;
+}
+
+.gameplay-loop p {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #cfcfcf;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.project-cta {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 1px solid #00ffd5;
+    color: #00ffd5;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.cta-button:hover {
+    background: #00ffd5;
+    color: #000;
+    box-shadow: 0 0 20px #00ffd5;
+}
+
+.project-tagline {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
