@@ -1732,6 +1732,10 @@ body.loaded { opacity: 1; }
     text-align: center;
 }
 
+.project-gallery {
+    margin-top: 100px;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

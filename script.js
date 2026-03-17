@@ -256,10 +256,11 @@ function loadGalleryImages() {
     const galleryGrid = document.getElementById('dynamicGallery');
     if (!galleryGrid) return;
 
-    galleryGrid.innerHTML = ''; // Clear existing to allow full dynamic population
+    galleryGrid.innerHTML = ''; // Clear existing
+    let loadedCount = 0;
+    const maxImages = 20;
 
-    let i = 1;
-    function tryLoadNext() {
+    for (let i = 1; i <= maxImages; i++) {
         const imgSrc = `assets/project1/${i}.jpeg`;
         const imgObj = new Image();
         
@@ -278,21 +279,14 @@ function loadGalleryImages() {
             // Re-apply tilt effect to the new element
             if (typeof applyTilt === 'function') applyTilt(item);
             
-            i++;
-            tryLoadNext();
-        };
-
-        imgObj.onerror = function() {
-            // Stop when no more images (e.g., 6.jpeg doesn't exist)
-            // Re-initialize lightbox and scroll animations for new items
-            if (typeof setupLightbox === 'function') setupLightbox();
-            if (typeof observeElements === 'function') observeElements('.gallery-item');
+            loadedCount++;
+            // Re-initialize lightbox and scroll animations as images load
+            setupLightbox();
+            observeElements('.gallery-item');
         };
         
         imgObj.src = imgSrc;
     }
-    
-    tryLoadNext();
 }
 
 // Lightbox Gallery Logic
