@@ -490,9 +490,9 @@ section {
 .highlight-glow, .highlight {
   color: #00ffd5;
   font-weight: 600;
+  text-shadow: 0 0 6px #00ffd5, 0 0 12px #00ffd5;
   position: relative;
   transition: all 0.3s ease;
-  text-shadow: 0 0 8px rgba(0, 255, 213, 0.3);
 }
 
 .highlight::after {
@@ -507,10 +507,6 @@ section {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
-}
-
-.highlight:hover {
-  text-shadow: 0 0 8px #00ffd5, 0 0 16px #00ffd5;
 }
 
 .highlight:hover::after {
