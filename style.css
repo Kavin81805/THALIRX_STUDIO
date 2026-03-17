@@ -983,7 +983,7 @@ footer p {
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: grayscale(90%) brightness(0.4) blur(1px);
+    filter: grayscale(80%) brightness(0.5);
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -991,7 +991,7 @@ footer p {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(rgba(3, 3, 3, 0.75), rgba(3, 3, 3, 0.9));
+    background: linear-gradient(rgba(3, 3, 3, 0.6), rgba(3, 3, 3, 0.75));
     z-index: 1;
 }
 
@@ -1861,12 +1861,12 @@ body.loaded {
 
 .feature-item:hover {
     transform: translateY(-10px);
-    border-color: #00ffd5;
-    box-shadow: 0 0 30px rgba(0, 255, 213, 0.1);
+    border-color: #00ff55;
+    box-shadow: 0 0 30px rgba(0, 255, 85, 0.15);
 }
 
 .feature-item h3 {
-    color: #00ffd5;
+    color: #00ff55;
     margin-bottom: 1rem;
     font-family: 'Syncopate', sans-serif;
     font-size: 1.1rem;
