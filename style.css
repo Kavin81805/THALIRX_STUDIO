@@ -487,7 +487,7 @@ section {
     margin-bottom: 2rem;
 }
 
-.highlight-glow {
+.highlight-glow, .highlight {
     color: var(--text-primary);
     font-weight: 600;
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
