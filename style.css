@@ -1266,9 +1266,7 @@ footer p {
     font-family: 'Syncopate', sans-serif;
 }
 
-.project-gallery {
-    padding-bottom: 10rem;
-}
+
 
 .gallery-grid {
     display: grid;
@@ -1727,13 +1725,13 @@ body.loaded { opacity: 1; }
 }
 
 /* Project Enhancements */
-.project-features, .gameplay-loop {
-    padding: 60px 0;
+.project-features, .gameplay-loop, .project-gallery {
+    padding: 40px 10%;
     text-align: center;
 }
 
 .project-gallery {
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 .features-grid {
