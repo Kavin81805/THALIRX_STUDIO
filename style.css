@@ -488,10 +488,33 @@ section {
 }
 
 .highlight-glow, .highlight {
-    color: var(--text-primary);
-    font-weight: 600;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-    letter-spacing: 0.5px;
+  color: #00ffd5;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(0, 255, 213, 0.3);
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #00ffd5;
+  box-shadow: 0 0 8px #00ffd5, 0 0 16px #00ffd5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover {
+  text-shadow: 0 0 8px #00ffd5, 0 0 16px #00ffd5;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
 }
 
 .glass-panel {
