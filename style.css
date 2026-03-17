@@ -481,13 +481,14 @@ section {
 }
 
 .about-text p {
-  margin-bottom: 18px;
-  line-height: 1.7;
+  margin-bottom: 22px;
+  line-height: 1.8;
   color: #cfcfcf;
+  font-size: 1.15rem;
 }
 
 .about-text p:first-child {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #ffffff;
 }
 
