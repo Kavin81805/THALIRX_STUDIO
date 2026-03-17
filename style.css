@@ -1132,7 +1132,7 @@ footer p {
 /* Project Detail Page Styles */
 .project-detail-page {
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
-                url('assets/project1/firstlook .jpg') fixed center/cover no-repeat;
+                url('assets/project1/firstlook.jpg') fixed center/cover no-repeat;
 }
 
 .project-header {
@@ -1142,7 +1142,7 @@ footer p {
     justify-content: center;
     text-align: center;
     background: radial-gradient(circle at center, rgba(3,3,3,0.2) 0%, rgba(0,0,0,1) 100%),
-                url('assets/project1/firstlook .jpg') center/cover no-repeat;
+                url('assets/project1/firstlook.jpg') center/cover no-repeat;
     position: relative;
     margin-top: 0;
 }
@@ -1728,12 +1728,12 @@ body.loaded { opacity: 1; }
 
 /* Project Enhancements */
 .project-features, .gameplay-loop {
-    padding: 100px 0;
+    padding: 60px 0;
     text-align: center;
 }
 
 .project-gallery {
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .features-grid {
