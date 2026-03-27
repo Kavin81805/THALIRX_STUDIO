@@ -101,7 +101,7 @@ if (!isMobile && cursor && cursorBlur) {
     document.addEventListener("mousemove", (e) => {
         cursor.style.left = e.clientX + "px";
         cursor.style.top = e.clientY + "px";
-        
+
         // Use requestAnimationFrame for smoother blur follow
         window.requestAnimationFrame(() => {
             cursorBlur.style.left = e.clientX + "px";
@@ -126,13 +126,13 @@ function applyTilt(card) {
         const rotateY = ((x - centerX) / centerX) * 8;
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
     });
-    
+
     card.addEventListener('mouseleave', () => {
         card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
     });
 }
 
-document.querySelectorAll('.founder-card, .service-card, .vision-mission-stack, .stat-item, .project-card, .project-info-card, .featured-image-container, .discord-card').forEach(applyTilt);
+document.querySelectorAll('.founder-card, .service-card, .vision-mission-stack, .stat-item, .project-card, .project-info-card, .featured-image-container, .discord-card, .portfolio-logo-card').forEach(applyTilt);
 
 // Scroll Animations
 const observerOptions = {
@@ -146,36 +146,36 @@ const fadeUpObserver = new IntersectionObserver((entries) => {
             entry.target.style.opacity = "1";
             entry.target.style.transform = "translateY(0)";
             fadeUpObserver.unobserve(entry.target);
-            
-            if(entry.target.classList.contains('vision-mission-stack') || entry.target.classList.contains('project-info-card')) {
+
+            if (entry.target.classList.contains('vision-mission-stack') || entry.target.classList.contains('project-info-card')) {
                 const counterContainer = entry.target.querySelector('#clientCounter, #employeeCounter');
                 if (!counterContainer || counterContainer.classList.contains('animated')) return;
-                
-                counterContainer.classList.add('animated'); 
+
+                counterContainer.classList.add('animated');
                 const targetStr = counterContainer.getAttribute('data-target').toString();
                 const digits = targetStr.split('');
-                
-                counterContainer.innerHTML = ''; 
+
+                counterContainer.innerHTML = '';
 
                 digits.forEach((digit, index) => {
                     const column = document.createElement('div');
                     column.className = 'digit-column';
                     let numbersHtml = '<div class="digit">0</div>';
-                    
-                    for(let i=1; i < 15; i++) {
+
+                    for (let i = 1; i < 15; i++) {
                         numbersHtml += `<div class="digit">${Math.floor(Math.random() * 10)}</div>`;
                     }
                     numbersHtml += `<div class="digit">${digit}</div>`;
-                    
+
                     column.innerHTML = numbersHtml;
                     counterContainer.appendChild(column);
-                    
+
                     setTimeout(() => {
                         const firstDigit = column.querySelector('.digit');
                         const h = firstDigit.getBoundingClientRect().height;
                         const remHeight = h / parseFloat(getComputedStyle(document.documentElement).fontSize);
-                        column.style.transform = `translateY(-${15 * remHeight}rem)`; 
-                    }, 100); 
+                        column.style.transform = `translateY(-${15 * remHeight}rem)`;
+                    }, 100);
                 });
 
                 const plusSign = document.createElement('div');
@@ -200,7 +200,7 @@ function observeElements(selector) {
 function animateSingleCounter(stat) {
     if (stat.classList.contains('animated')) return;
     stat.classList.add('animated');
-    
+
     const target = +stat.getAttribute('data-target');
     const duration = 2000; // 2 seconds exactly
     const startTime = performance.now();
@@ -208,22 +208,22 @@ function animateSingleCounter(stat) {
     function update(currentTime) {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        
+
         // Ease out cubic
         const easedProgress = 1 - Math.pow(1 - progress, 3);
-        
+
         const currentCount = Math.floor(easedProgress * target);
         // Only add '+' for values like 5 or 47, not for 1 or 2025
         const showPlus = (target >= 5 && target !== 2025);
         stat.innerText = currentCount + (showPlus ? '+' : '');
-        
+
         if (progress < 1) {
             requestAnimationFrame(update);
         } else {
             stat.innerText = target + (showPlus ? '+' : '');
         }
     }
-    
+
     requestAnimationFrame(update);
 }
 
@@ -258,13 +258,13 @@ function loadGalleryImages() {
 
     galleryGrid.innerHTML = ''; // Clear existing
     let loadedCount = 0;
-    const maxImages = 20;
+    const maxImages = 14;
 
     for (let i = 1; i <= maxImages; i++) {
         const imgSrc = `assets/project1/${i}.jpeg`;
         const imgObj = new Image();
-        
-        imgObj.onload = function() {
+
+        imgObj.onload = function () {
             const item = document.createElement('div');
             item.className = 'gallery-item glass-panel';
             item.setAttribute('data-tilt', '');
@@ -272,19 +272,19 @@ function loadGalleryImages() {
             const img = document.createElement('img');
             img.src = imgSrc;
             img.alt = `Project 1 Screenshot ${i}`;
-            
+
             item.appendChild(img);
             galleryGrid.appendChild(item);
-            
+
             // Re-apply tilt effect to the new element
             if (typeof applyTilt === 'function') applyTilt(item);
-            
+
             loadedCount++;
             // Re-initialize lightbox and scroll animations as images load
             setupLightbox();
             observeElements('.gallery-item');
         };
-        
+
         imgObj.src = imgSrc;
     }
 }
@@ -299,7 +299,7 @@ let currentImageIndex = 0;
 function setupLightbox() {
     const images = document.querySelectorAll(".gallery-item img, .featured-image");
     currentImages = Array.from(images);
-    
+
     currentImages.forEach((img, index) => {
         img.removeEventListener("click", () => openLightbox(index));
         img.onclick = () => openLightbox(index);

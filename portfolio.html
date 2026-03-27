@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Portfolio - ThalirX Studio</title>
+    <meta name="description"
+        content="Explore web development projects and client portfolios created by ThalirX Studio.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AI & Authority Schema (Rukku Travels) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rukku Travels",
+      "url": "https://rukkutravels.netlify.app/",
+      "description": "Premium travel website designed and developed by ThalirX Studio, focused on modern UI/UX and customer trust.",
+      "creator": {
+        "@type": "Organization",
+        "name": "ThalirX Studio"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Kavin G"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+    <div class="scroll-progress-bar"></div>
+    <button id="backToTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="ThalirX Studio Logo" class="nav-logo" loading="lazy" decoding="async"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span style="display:none;" class="logo-text">THALIRX</span>
+            </a>
+        </div>
+        <div class="nav-toggle" id="navToggle" role="button" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <ul class="nav-links">
+        <li><a href="index.html#home"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="fa-solid fa-building"></i><span>Studio</span></a></li>
+        <li><a href="index.html#services"><i class="fa-solid fa-gears"></i><span>Services</span></a></li>
+        <li><a href="index.html#projects"><i class="fa-solid fa-gamepad"></i><span>Projects</span></a></li>
+        <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i><span>Portfolio</span></a></li>
+        <li><a href="index.html#community"><i class="fa-solid fa-people-group"></i><span>Community</span></a></li>
+    </ul>
+
+    <header class="project-header"
+        style="background: radial-gradient(circle at center, rgba(3, 3, 3, 0.2) 0%, rgba(0, 0, 0, 1) 100%), url('assets/pf/main.jpeg') center/cover no-repeat;">
+        <div class="container header-container">
+            <div class="hero-title-wrapper">
+                <h1 class="hero-title project-title" data-text="WEB PORTFOLIO">WEB PORTFOLIO</h1>
+            </div>
+            <p class="project-tagline">Client Projects & Web Applications</p>
+        </div>
+    </header>
+
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .portfolio-logo-card {
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+            text-decoration: none;
+            background: rgba(15, 15, 15, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-logo-card:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        .portfolio-logo-img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .portfolio-logo-card:hover .portfolio-logo-img {
+            transform: translateY(-40px) scale(0.4);
+            opacity: 0.8;
+        }
+
+        .portfolio-details {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 0;
+            width: 100%;
+            padding: 0 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+        }
+
+        .portfolio-logo-card:hover .portfolio-details {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.1s;
+        }
+
+        /* Mobile Fixes for Portfolio Title & Visuals */
+        @media (max-width: 768px) {
+            .project-header {
+                height: 45vh !important;
+                background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 85%), 
+                            url('assets/pf/main.jpeg') center center/cover no-repeat !important;
+                background-color: #000 !important;
+                position: relative;
+            }
+            /* Fix the 'gray color' frame transition at the bottom */
+            .project-header::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: linear-gradient(to bottom, transparent, #000);
+                z-index: 1;
+            }
+            .project-title {
+                font-size: clamp(1.4rem, 7vw, 1.8rem) !important;
+                letter-spacing: 1px !important;
+                white-space: normal !important;
+                word-wrap: break-word !important;
+                line-height: 1.2 !important;
+                max-width: 90vw !important;
+                margin: 0 auto !important;
+                position: relative;
+                z-index: 2;
+            }
+            .project-title::before {
+                font-size: inherit !important;
+                white-space: normal !important;
+                width: 100% !important;
+                height: 100% !important;
+                text-align: center !important;
+            }
+            .project-tagline {
+                font-size: 0.85rem !important;
+                letter-spacing: 1px !important;
+                max-width: 80vw !important;
+                margin: 0.5rem auto 0 !important;
+                position: relative;
+                z-index: 2;
+            }
+            #portfolio {
+                background-color: #000 !important;
+            }
+        }
+    </style>
+
+    <section id="portfolio" class="projects">
+        <div class="container">
+            <h2 class="section-title">OUR WORKS</h2>
+            <div class="portfolio-grid">
+
+                <!-- Logo 1 -->
+                <a href="https://rukkutravels.netlify.app/" target="_blank" rel="noopener noreferrer" class="portfolio-logo-card glass-panel" data-tilt>
+                    <img src="assets/pf/RTT.png" alt="Rukku Travels" class="portfolio-logo-img">
+                    <div class="portfolio-details">
+                        <h3 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Rukku Travels</h3>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Premium travel brand website focused on modern UI and customer trust.</p>
+                        <span class="btn-primary" style="padding: 0.4rem 1.2rem; font-size: 0.75rem;">VIEW LIVE WEB</span>
+                    </div>
+                </a>
+
+                <!-- Logo 2 (Placeholder for future)
+            <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-logo-card glass-panel">
+                <img src="assets/pf/logo2.png" alt="Project 2">
+            </a>
+            -->
+
+                <!-- Logo 3 (Placeholder for future)
+            <a href="#" target="_blank" rel="noopener noreferrer" class="portfolio-logo-card glass-panel">
+                <img src="assets/pf/logo3.png" alt="Project 3">
+            </a>
+            -->
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <h2 class="footer-logo">THALIRX</h2>
+            <p>Ready to build together? Join the movement.</p>
+            <div class="footer-grid">
+                <div class="contact-section">
+                    <h3>CONNECT WITH US</h3>
+                    <div class="contact-info">
+                        <a href="mailto:thalirxmail@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> thalirxmail@gmail.com
+                        </a>
+                        <a href="tel:+916382494746" class="contact-link">
+                            <i class="fas fa-phone"></i> +91 63824 94746
+                        </a>
+                        <a href="tel:+919786701919" class="contact-link">
+                            <i class="fas fa-phone"></i> +91 97867 01919
+                        </a>
+                    </div>
+                </div>
+                <div class="social-section">
+                    <h3>FOLLOW THE LEGACY</h3>
+                    <div class="social-links">
+                        <a href="https://discord.gg/AvM7FXssgN" target="_blank" aria-label="Join our Discord community">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="https://www.instagram.com/thalirx_studio?igsh=MWVpcnJwZ3Nvdnl0ZQ==" target="_blank"
+                            aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/thalirx-studio/" target="_blank"
+                            aria-label="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com/@thalirx_studio?si=Ac5JHFkjdhfQUKjt" target="_blank"
+                            aria-label="Subscribe to our YouTube channel">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ThalirX Studio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

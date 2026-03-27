@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thalirx.com/sitemap.xml
+Sitemap: https://thalirxstudio.netlify.app/sitemap.xml

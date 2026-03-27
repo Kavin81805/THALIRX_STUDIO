@@ -59,14 +59,22 @@
 
 :root {
     /* Color Palette from ThalirX Logo (Black, White, Gray) */
-    --bg-color: #030303;
+    --bg-color: #000000;
     --text-primary: #ffffff;
     --text-secondary: #aaaaaa;
     --accent: #888888;
     --accent-light: #cccccc;
-    --navbar-bg: rgba(3, 3, 3, 0.85);
+    --navbar-bg: rgba(0, 0, 0, 0.85);
     --card-bg: rgba(255, 255, 255, 0.03);
     --border-color: rgba(255, 255, 255, 0.1);
+}
+
+html, body {
+    background-color: #000000 !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
 
 * {
@@ -603,10 +611,11 @@ section {
 
 /* Founders Section */
 .founders-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 3rem;
     margin-top: 5rem;
+    flex-wrap: wrap;
 }
 
 .founder-card {
@@ -648,8 +657,8 @@ section {
     background-image: url('assets/KAVING.jpeg');
 }
 
-.rangesh-img {
-    background-image: url('assets/RANGESH.jpeg');
+.founder-card {
+    max-width: 800px;
 }
 
 .founder-info-container {
