@@ -7,15 +7,15 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
     <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Portfolio - ThalirX Studio</title>
+    <title>Client Work - ThalirX Studio</title>
     <meta name="description"
-        content="Explore web development projects and client portfolios created by ThalirX Studio.">
+        content="Explore web development projects and client work created by ThalirX Studio.">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- AI & Authority Schema (Rukku Travels) -->
     <script type="application/ld+json">
     {
@@ -61,7 +61,7 @@
         <li><a href="index.html#about"><i class="fa-solid fa-building"></i><span>Studio</span></a></li>
         <li><a href="index.html#services"><i class="fa-solid fa-gears"></i><span>Services</span></a></li>
         <li><a href="index.html#projects"><i class="fa-solid fa-gamepad"></i><span>Projects</span></a></li>
-        <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i><span>Portfolio</span></a></li>
+        <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i><span>Client Work</span></a></li>
         <li><a href="index.html#community"><i class="fa-solid fa-people-group"></i><span>Community</span></a></li>
     </ul>
 
@@ -69,7 +69,7 @@
         style="background: radial-gradient(circle at center, rgba(3, 3, 3, 0.2) 0%, rgba(0, 0, 0, 1) 100%), url('assets/pf/main.jpeg') center/cover no-repeat;">
         <div class="container header-container">
             <div class="hero-title-wrapper">
-                <h1 class="hero-title project-title" data-text="WEB PORTFOLIO">WEB PORTFOLIO</h1>
+                <h1 class="hero-title project-title" data-text="CLIENT WORK">CLIENT WORK</h1>
             </div>
             <p class="project-tagline">Client Projects & Web Applications</p>
         </div>
@@ -156,11 +156,12 @@
         @media (max-width: 768px) {
             .project-header {
                 height: 45vh !important;
-                background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 85%), 
-                            url('assets/pf/main.jpeg') center center/cover no-repeat !important;
+                background: radial-gradient(circle at center, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 1) 85%),
+                    url('assets/pf/main.jpeg') center center/cover no-repeat !important;
                 background-color: #000 !important;
                 position: relative;
             }
+
             /* Fix the 'gray color' frame transition at the bottom */
             .project-header::after {
                 content: '';
@@ -172,6 +173,7 @@
                 background: linear-gradient(to bottom, transparent, #000);
                 z-index: 1;
             }
+
             .project-title {
                 font-size: clamp(1.4rem, 7vw, 1.8rem) !important;
                 letter-spacing: 1px !important;
@@ -183,6 +185,7 @@
                 position: relative;
                 z-index: 2;
             }
+
             .project-title::before {
                 font-size: inherit !important;
                 white-space: normal !important;
@@ -190,6 +193,7 @@
                 height: 100% !important;
                 text-align: center !important;
             }
+
             .project-tagline {
                 font-size: 0.85rem !important;
                 letter-spacing: 1px !important;
@@ -198,6 +202,7 @@
                 position: relative;
                 z-index: 2;
             }
+
             #portfolio {
                 background-color: #000 !important;
             }
@@ -210,12 +215,18 @@
             <div class="portfolio-grid">
 
                 <!-- Logo 1 -->
-                <a href="https://rukkutravels.netlify.app/" target="_blank" rel="noopener noreferrer" class="portfolio-logo-card glass-panel" data-tilt>
+                <a href="https://rukkutravels.netlify.app/" target="_blank" rel="noopener noreferrer"
+                    class="portfolio-logo-card glass-panel" data-tilt>
                     <img src="assets/pf/RTT.png" alt="Rukku Travels" class="portfolio-logo-img">
                     <div class="portfolio-details">
-                        <h3 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">Rukku Travels</h3>
-                        <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">Premium travel brand website focused on modern UI and customer trust.</p>
-                        <span class="btn-primary" style="padding: 0.4rem 1.2rem; font-size: 0.75rem;">VIEW LIVE WEB</span>
+                        <h3
+                            style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.5rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">
+                            Rukku Travels</h3>
+                        <p
+                            style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+                            Premium travel brand website focused on modern UI and customer trust.</p>
+                        <span class="btn-primary" style="padding: 0.4rem 1.2rem; font-size: 0.75rem;">VIEW LIVE
+                            WEB</span>
                     </div>
                 </a>
 
